@@ -1,0 +1,48 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.swiper-pagination-bullet {
+  margin-top: 10px !important;
+  margin-right: 30px !important;
+  width: 10px;
+  height: 10px;
+  background: transparent; /* Color of non-active dots */
+  border:2px solid #999; /* Border color of non-active dots */
+  border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+  background: #c5b358; 
+  border-color: #c5b358;
+}
+
+.swiper-slide-collection {
+  height: fit-content !important;
+  background:transparent !important;
+}
+
+.swiper-wrapper{
+  height: fit-content !important;
+}

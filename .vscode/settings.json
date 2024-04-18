@@ -1,0 +1,6 @@
+{
+  "accessibility.verbosity.inlineChat": false,
+  "inlineChat.acceptedOrDiscardBeforeSave": false,
+  "inlineChat.holdToSpeech": false,
+  "inlineChat.accessibleDiffView": "off"
+}
