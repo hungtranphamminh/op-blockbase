@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-shadow-white{
+  text-shadow: 0.5px 0.5px 0.5px white;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.underline-animation::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: orange;
+  transition: width .3s;
+}
+
+.underline-animation:hover::after {
+  width: 100%;
+}
+
+
+.underline-animation-black::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0.5px;
+  background: #1A2433;
+  transition: width .3s;
+}
+
+.underline-animation-black:hover::after {
+  width: 100%;
+}
