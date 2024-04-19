@@ -96,7 +96,7 @@ export default function OurTeam() {
               <div
                 className={`absolute top-0   h-full transform transition-all ${
                   hover ? " w-full left-0" : "w-0 right-0"
-                } bg-white transition-all duration-500 ease-in-out`}
+                } bg-white transition-all duration-200 ease-in-out`}
               ></div>
               <p className="relative z-10">VIEW TEAM</p>
               <Image src={arrow} alt="arrow" className="relative z-10" />
