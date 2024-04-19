@@ -25,7 +25,7 @@ export default function AboutUs() {
   }, []);
 
   useEffect(() => {
-    if (scrollPos > 100 && scrollPos < window.innerHeight * 2) {
+    if (scrollPos > 100) {
       if (triggered) return;
       controls.start("show");
       console.log("already show");
@@ -67,7 +67,7 @@ export default function AboutUs() {
             digital assets.
           </motion.p>
           <motion.div
-            variants={getFadeInFromLeftVariants(1.0)}
+            variants={getFadeInFromLeftVariants(0.7)}
             initial="hidden"
             animate={controls}
           >

@@ -38,7 +38,7 @@ export default function Motto() {
       className="w-full relative flex items-center justify-center bg-[rgba(0,0,0,0.5)] h-screen xl:pt-20 pt-[50px]"
       ref={sectionRef}
     >
-      {/*  */}
+      {/* column grid background decorator */}
       <MottoDecorator />
       {/* main text content */}
       <div
