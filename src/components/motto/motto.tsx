@@ -1,6 +1,6 @@
 "use client";
 import { getMottoFadeWidthVariants } from "@/utils/animation/landing-page/motto-variants";
-import MottoDecorator from "./motto-decorator";
+import MottoDecorator from "../column-decorator/motto-decorator";
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef, use } from "react";
 
