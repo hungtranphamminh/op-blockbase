@@ -1,5 +1,6 @@
 import AboutUs from "../about-us/about-us";
 import Motto from "../motto/motto";
+import OurTeam from "../our-team/our-team";
 import Portfolio from "../portfolio/portfolio";
 
 export default function LandingPage() {
@@ -8,6 +9,7 @@ export default function LandingPage() {
       <Motto />
       <AboutUs />
       <Portfolio />
+      <OurTeam />
     </div>
   );
 }

@@ -5,7 +5,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import PortfolioDecorator from "../column-decorator/portfolio-decorator";
 import { getFadeInFromLeftVariants } from "@/utils/animation/landing-page/about-us-variants";
-import { getMottoFadeWidthVariants } from "@/utils/animation/landing-page/motto-variants";
 import blackarrow from "@/images/about-us/arrow.svg";
 import whitearrow from "@/images/portfolio/white-arrow.svg";
 

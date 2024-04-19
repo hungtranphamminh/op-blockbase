@@ -13,7 +13,6 @@ const PortfolioDecorator = ({ triggered }: { triggered: boolean }) => {
 
   return (
     <div className="w-full max-w-[min(1600px,calc(0.8*100vw))] flex relative">
-      {/* main column */}
       <div
         className="w-full max-w-[min(1600px,calc(0.8*100vw))]
       h-screen
