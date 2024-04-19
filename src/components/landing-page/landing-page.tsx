@@ -1,4 +1,5 @@
 import AboutUs from "../about-us/about-us";
+import Insights from "../insights/insights";
 import Motto from "../motto/motto";
 import OurTeam from "../our-team/our-team";
 import Portfolio from "../portfolio/portfolio";
@@ -10,6 +11,7 @@ export default function LandingPage() {
       <AboutUs />
       <Portfolio />
       <OurTeam />
+      <Insights />
     </div>
   );
 }
