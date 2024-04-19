@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
+import Header from "@/components/header/header";
+import BackgroundVideo from "@/components/landing-page/background-video";
+
 const inter = Inter({ subsets: ["latin"] });
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-source-serif-4",
-});
 
 export const metadata: Metadata = {
   title: "Blockbase Landing Page",
@@ -24,7 +23,11 @@ export default function RootLayout({
         className={`${inter.className} 
         `}
       >
-        <main className="relative w-full bg-white">{children}</main>
+        <main className="relative w-full bg-white flex flex-col items-center">
+          <BackgroundVideo />
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );
