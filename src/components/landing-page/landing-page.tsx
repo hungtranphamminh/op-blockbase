@@ -7,7 +7,7 @@ import Portfolio from "../portfolio/portfolio";
 
 export default function LandingPage() {
   return (
-    <div className="w-full relative h-[3000px]">
+    <div className="w-full relative">
       <Motto />
       <AboutUs />
       <Portfolio />

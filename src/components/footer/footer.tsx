@@ -7,22 +7,19 @@ import PortfolioDecorator from "../column-decorator/portfolio-decorator";
 import { getFadeInFromLeftVariants } from "@/utils/animation/landing-page/about-us-variants";
 import blackarrow from "@/images/about-us/arrow.svg";
 import whitearrow from "@/images/portfolio/white-arrow.svg";
+import FooterDecorator from "../column-decorator/footer-decorator";
+import SocialIcons from "./social-icons";
 
 export default function Footer() {
-  const [hover, setHover] = useState(false);
   const [flexHeight, setFlexHeight] = useState(0);
-  const portfolioRef = useRef<HTMLDivElement | null>(null);
+  const footerRef = useRef<HTMLDivElement | null>(null);
 
   const controls = useAnimation();
-  const [scrollPos, setScrollPos] = useState(0);
-  const [triggered, setTriggered] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      if (portfolioRef.current) {
-        setScrollPos(window.scrollY);
-
-        const rectSection = portfolioRef.current.getBoundingClientRect();
+      if (footerRef.current) {
+        const rectSection = footerRef.current.getBoundingClientRect();
 
         const scrollTop = window.scrollY;
         const sectionTop = scrollTop - rectSection.top;
@@ -41,99 +38,80 @@ export default function Footer() {
   }, []);
 
   useEffect(() => {
-    if (scrollPos > window.innerHeight * 4 + 100) {
-      if (triggered) return;
+    setTimeout(() => {
       controls.start("show");
-      setTriggered(true);
-    } else {
-      setTriggered(false);
-      controls.start("hidden");
-    }
-  }, [controls, scrollPos]);
+    }, 3000);
+  }, [controls]);
 
   return (
     <div
-      className="w-full relative flex items-center justify-center bg-[#181a1f] h-screen"
-      ref={portfolioRef}
+      className="w-full relative flex flex-col items-center justify-center bg-[#181a1f] h-fit "
+      ref={footerRef}
     >
       {/* column grid background decorator */}
-      <PortfolioDecorator triggered={triggered} />
+      <FooterDecorator />
       {/* main portfolio content */}
-      <div className="w-full h-screen absolute text-white">
-        <div className="w-full h-full">
-          {/* section title */}
-          <motion.div
-            className="flex absolute xl:top-[170px] xl:gap-[30px] top-[100px] gap-[15px]
-      z-30 -tracking-[1.5px] w-full text-white items-end justify-items-start"
-            variants={getFadeInFromLeftVariants(0)}
-            initial="hidden"
-            animate={controls}
-          >
-            <div className="sm:h-[3px] h-[2px] w-[calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)] max-w-[8rem] bg-white"></div>
-            <h2 className="sm:text-[1.5rem] leading-none text-[1rem]">
-              Our Portfolio
+      <div className="w-full relative text-[#f0f0f0] h-full z-[9999]">
+        <div className="w-full max-w-[min(1600px,calc(0.8*100vw))] h-full relative mx-auto pt-[120px]">
+          {/* footer title */}
+          <div className="lg:pt-[50px] mb-[30px]">
+            <h2 className="lg:text-[4.375rem] sm:text-[2.5rem] text-[1.6rem] leading-[1.2] mb-[15px] -tracking-[1.5px]">
+              Staying
             </h2>
-          </motion.div>
-          {/* video and motto */}
-          <div className="max-w-[min(1600px,calc(0.8*100vw))] h-screen w-full m-auto pt-[75px] flex justify-center items-center">
-            <div className="flex items-center justify-center w-full">
-              <div className="w-1/2">
-                <video className="w-full h-auto" muted autoPlay loop>
-                  <source
-                    src="/videos/landing-page/globe.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
+            <h2 className="lg:leading-[0.8] lg:text-[7rem] sm:text-[3rem] sm:mb-0 text-[1.875rem] leading-[1.2] font-semibold -tracking-[1.5px]">
+              One Block Ahead
+            </h2>
+          </div>
+          {/* footer contact */}
+          <div
+            className="flex-col lg:flex-row sm:pb-[100px] sm:justify-between
+          w-full gap-[25px] flex pb-[70px] items-start
+          "
+          >
+            {/* social icons */}
+            <SocialIcons />
+            {/* info contact */}
+            <div className="flex flex-col gap-[25px] sm:flex-row justify-between items-start lg:gap-[100px]">
+              {/* hotline */}
+              <div>
+                <h2 className="uppercase sm:text-[1.5rem] sm:mb-2.5 text-[20px] mb-[5px] -tracking-[1.5px]">
+                  HOTLINE
+                </h2>
+                <p className="lg:text-[18px] max-w-[300px] sm:text-[12px] text-[0.9rem]">
+                  (+84) 90 909 0942
+                </p>
               </div>
-              {/* motto */}
-              <div className="w-1/2 relative z-[9999] ">
-                <motion.p
-                  className="xl:text-[2.375rem] lg:text-[1.8rem] lg:mb-20 mb-[50px] leading-normal text-[1.5rem]"
-                  variants={getFadeInFromLeftVariants(0.5)}
-                  initial="hidden"
-                  animate={controls}
-                >
-                  We aim to generate returns for our investors while
-                  contributing to a more sustainable and socially responsible
-                  future.
-                </motion.p>
-                <motion.div
-                  variants={getFadeInFromLeftVariants(0.7)}
-                  initial="hidden"
-                  animate={controls}
-                >
-                  <Link
-                    href=""
-                    className="relative z-[9999] w-fit overflow-hidden flex items-center justify-center border border-white  px-[30px] py-[15px] gap-2.5 text-base font-medium uppercase"
-                    onMouseOver={() => setHover(true)}
-                    onMouseOut={() => setHover(false)}
-                  >
-                    <div
-                      className={`absolute top-0   h-full transform transition-all ${
-                        hover ? " w-full left-0 " : " w-0 right-0"
-                      } bg-white transition-all duration-200 ease-in-out`}
-                    ></div>
-                    <p className={` z-10 ${hover ? " text-black " : ""}`}>
-                      VIEW PORTFOLIO
-                    </p>
-                    <Image
-                      src={hover ? blackarrow : whitearrow}
-                      alt="arrow"
-                      className="relative z-10"
-                    />
-                  </Link>
-                </motion.div>
+              {/* email */}
+              <div>
+                <h2 className="uppercase sm:text-[1.5rem] sm:mb-2.5 text-[20px] mb-[5px] -tracking-[1.5px]">
+                  EMAIL
+                </h2>
+                <p className="lg:text-[18px] max-w-[300px] sm:text-[12px] text-[0.9rem]">
+                  business@blockbase.co
+                </p>
+              </div>
+              {/* address */}
+              <div>
+                <h2 className="uppercase sm:text-[1.5rem] sm:mb-2.5 text-[20px] mb-[5px] -tracking-[1.5px]">
+                  ADDRESS
+                </h2>
+                <p className="lg:text-[18px] max-w-[300px] sm:text-[12px] text-[0.9rem]">
+                  18 Dinh Tien Hoang, District 1, Ho Chi Minh City, Vietnam
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* copy right*/}
+      <div className="relative z-[999] w-full lg:text-[18px] lg:py-[30px] sm:text-[12px] sm:py-[20px] text-center text-[8px] py-2.5 bg-[#181a1f] text-[#dddddd] border-t border-t-[#b1b1b166]">
+        Copyright © 2022 BlockBase Ltd. All rights reserved ®
+      </div>
       {/* top right white bars */}
       <div
-        style={{ height: flexHeight * 80 }}
-        className="bg-[#f0f0f0] absolute top-0 right-0 max-h-[80px]
-      w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*4))]
+        style={{ height: flexHeight * 53 }}
+        className="bg-[#ddd] absolute top-0 right-0 max-h-[53px]
+      w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*2))]
       "
       ></div>
     </div>
