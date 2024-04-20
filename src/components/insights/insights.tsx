@@ -4,7 +4,10 @@ import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import InsightsDecorator from "../column-decorator/insights-decorator";
-import { getFadeInFromLeftVariants } from "@/utils/animation/landing-page/about-us-variants";
+import {
+  getFadeInFromLeftVariants,
+  getFadeInFromLeftWidthVariants,
+} from "@/utils/animation/landing-page/about-us-variants";
 import blackarrow from "@/images/about-us/arrow.svg";
 
 import wc from "@/images/insights/wc.png";
@@ -101,16 +104,26 @@ export default function Insights() {
           {/* posts */}
           <div className="max-w-[min(1600px,calc(0.8*100vw))] relative z-[9999] h-screen w-full m-auto flex flex-col justify-center items-center">
             {/* link */}
-            <div className="w-full flex justify-end">
+            <motion.div
+              variants={getFadeInFromLeftWidthVariants(1.0, "-1%")}
+              initial="hidden"
+              animate={controls}
+              className="w-full flex justify-end"
+            >
               <div className="mb-[50px] flex items-center justify-center sm:gap-[20px] gap-[10px] sm:text-[1.375rem] opacity-1 hover:opacity-40 transition-all duration-500">
                 VIEW ALL
                 <div>
                   <Image src={blackarrow} alt="arrow" />
                 </div>
               </div>
-            </div>
+            </motion.div>
             {/* main posts */}
-            <div className="w-full flex flex-wrap items-start">
+            <motion.div
+              variants={getFadeInFromLeftVariants(0)}
+              initial="hidden"
+              animate={controls}
+              className="w-full flex flex-wrap items-start"
+            >
               {MOCKUP_POSTS.map((post, index) => {
                 return (
                   <div key={index} className="w-1/3">
@@ -118,7 +131,7 @@ export default function Insights() {
                   </div>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
