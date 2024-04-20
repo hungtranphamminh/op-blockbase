@@ -23,7 +23,7 @@ export default function RootLayout({
         className={`${inter.className} 
         `}
       >
-        <main className="relative w-full bg-white flex flex-col items-center">
+        <main className="relative w-full  flex flex-col items-center">
           <BackgroundVideo />
           <Header />
           {children}

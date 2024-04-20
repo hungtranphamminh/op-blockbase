@@ -1,12 +1,12 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import BackgroundDecorator from "../column-decorator/decorator";
 import Image from "next/image";
 import arrow from "@/images/about-us/arrow.svg";
 import Link from "next/link";
 import { getFadeInFromLeftVariants } from "@/utils/animation/landing-page/about-us-variants";
 import { getSlideInFromLeftVariants } from "@/utils/animation/landing-page/our-team-variants";
+import OurTeamDecorator from "../column-decorator/team-decorator";
 
 export default function OurTeam() {
   const [hover, setHover] = useState(false);
@@ -39,7 +39,7 @@ export default function OurTeam() {
   return (
     <div className="w-full relative flex items-center justify-center bg-[#f0f0f0] h-screen">
       {/* background column grid */}
-      <BackgroundDecorator />
+      <OurTeamDecorator />
 
       {/* section title */}
       <motion.div
