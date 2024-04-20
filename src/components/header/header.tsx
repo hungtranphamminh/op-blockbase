@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import logo from "@/images/logo-white.svg";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -40,7 +38,7 @@ export default function Header() {
     >
       {/* name */}
       <div
-        className={`relative w-fit overflow-hidden px-[50px] py-[3px] h-full flex items-center justify-center border-r border-r-white
+        className={`relative w-fit overflow-hidden group px-[50px] py-[3px] h-full flex items-center justify-center border-r border-r-white
       ${scroll ? " border-r-black" : ""}
       
       `}
@@ -48,9 +46,7 @@ export default function Header() {
         onMouseOut={() => setHover(false)}
       >
         <div
-          className={`absolute top-0   h-full transform transition-all ${
-            hover ? " w-full left-0 " : " w-0 right-0"
-          } bg-white transition-all duration-200 ease-in-out`}
+          className={`absolute top-0 h-full transform transition-all group-hover:w-full group-hover:left-0 w-0 right-0 bg-white duration-200 ease-in-out`}
         ></div>
         <svg
           className="blockbase-logo relative z-[9999]"
@@ -60,7 +56,7 @@ export default function Header() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_302_1229)">
+          <g clipPath="url(#clip0_302_1229)">
             <path
               d="M151.318 17.979C151.392 13.6189 148.435 10.977 143.533 10.977C138 10.977 135.516 14.1362 135.516 19.4755C135.516 24.8148 137.818 27.8632 144.013 27.8632C147.342 27.8632 149.934 26.7454 151.061 26.1635L149.918 22.9765C147.748 23.5123 145.794 23.7802 144.377 23.7802C141.545 23.7802 140.236 23.1705 140.154 21.0274H151.111C151.243 20.0205 151.293 18.9859 151.318 17.979ZM146.812 17.8127H140.178C140.361 15.7435 141.222 14.9122 143.45 14.9122C145.363 14.9122 146.804 15.6604 146.804 17.4709V17.8127H146.812Z"
               fill={`${hover || scroll ? "#000" : "#fff"}`}

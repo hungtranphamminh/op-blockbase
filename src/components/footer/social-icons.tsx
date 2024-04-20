@@ -22,7 +22,7 @@ export default function SocialIcons() {
         <svg
           stroke="currentColor"
           fill={`${hover1 ? "#181a1f" : "#fff"}`}
-          stroke-width="0"
+          strokeWidth="0"
           version="1.1"
           viewBox="0 0 16 16"
           className="icon relative z-20"
@@ -46,7 +46,7 @@ export default function SocialIcons() {
         <svg
           stroke="currentColor"
           fill={`${hover2 ? "#181a1f" : "#fff"}`}
-          stroke-width="0"
+          strokeWidth="0"
           version="1.1"
           viewBox="0 0 16 16"
           className="icon relative z-20"
@@ -70,7 +70,7 @@ export default function SocialIcons() {
         <svg
           stroke={`${hover3 ? "#181a1f" : "#fff"}`}
           fill={`${hover3 ? "#181a1f" : "#fff"}`}
-          stroke-width="0"
+          strokeWidth="0"
           viewBox="0 0 448 512"
           className="icon relative z-20"
           height="1em"
@@ -93,7 +93,7 @@ export default function SocialIcons() {
         <svg
           stroke="currentColor"
           fill={`${hover4 ? "#181a1f" : "#fff"}`}
-          stroke-width="0"
+          strokeWidth="0"
           viewBox="0 0 448 512"
           className="icon relative z-20"
           height="1em"
