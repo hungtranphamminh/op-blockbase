@@ -3,10 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import PortfolioDecorator from "../column-decorator/portfolio-decorator";
-import { getFadeInFromLeftVariants } from "@/utils/animation/landing-page/about-us-variants";
-import blackarrow from "@/images/about-us/arrow.svg";
-import whitearrow from "@/images/portfolio/white-arrow.svg";
 import FooterDecorator from "../column-decorator/footer-decorator";
 import SocialIcons from "./social-icons";
 
