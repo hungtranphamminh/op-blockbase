@@ -20,7 +20,7 @@ const MottoDecorator = () => {
     window.addEventListener("resize", CheckForResize);
 
     if (window.innerWidth < 640) {
-      setDelays([0, 0.3, 0.6, 0.9, 0.6, 0.9]);
+      setDelays([0, 0.3, 0.6, 0.9, 1.2, 0.6, 0.9]);
       setMobile(true);
     }
     setHasCheck(true);
