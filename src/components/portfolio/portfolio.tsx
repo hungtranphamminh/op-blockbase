@@ -63,7 +63,7 @@ export default function Portfolio() {
         <div className="w-full h-full">
           {/* section title */}
           <motion.div
-            className="flex absolute xl:top-[170px] xl:gap-[30px] top-[100px] gap-[15px]
+            className="flex absolute xl:top-[170px] xl:gap-[30px] sm:top-[100px] top-[42px] gap-[15px]
       z-30 -tracking-[1.5px] w-full text-white items-end justify-items-start"
             variants={getFadeInFromLeftVariants(0)}
             initial="hidden"
@@ -76,8 +76,9 @@ export default function Portfolio() {
           </motion.div>
           {/* video and motto */}
           <div className="max-w-[min(1600px,calc(0.8*100vw))] h-screen w-full m-auto pt-[75px] flex justify-center items-center">
-            <div className="flex items-center justify-center w-full">
-              <div className="w-1/2">
+            <div className="flex sm:flex-row flex-col items-center justify-center w-full">
+              {/* video */}
+              <div className="sm:w-1/2  w-full">
                 <video className="w-full h-auto" muted autoPlay loop>
                   <source
                     src="/videos/landing-page/globe.mp4"
@@ -87,7 +88,8 @@ export default function Portfolio() {
                 </video>
               </div>
               {/* motto */}
-              <div className="w-1/2 relative z-[9999] ">
+              <div className="sm:w-1/2 w-full relative z-[9999] ">
+                {/* main text content */}
                 <motion.p
                   className="xl:text-[2.375rem] lg:text-[1.8rem] lg:mb-20 mb-[50px] leading-normal text-[1.5rem]"
                   variants={getFadeInFromLeftVariants(0.5)}
