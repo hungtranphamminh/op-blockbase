@@ -1,7 +1,7 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import BackgroundDecorator from "../column-decorator/decorator";
+import BackgroundDecorator from "../column-decorator/about-us-decorator";
 import Image from "next/image";
 import arrow from "@/images/about-us/arrow.svg";
 import Link from "next/link";
@@ -53,9 +53,10 @@ export default function AboutUs() {
       </motion.div>
       {/* main content */}
       <div className="relative w-full max-w-[min(1600px,calc(0.8*100vw))] m-auto flex items-center justify-center z-30">
-        <div className="flex flex-col items-center justify-center w-full max-w-[980px]">
+        <div className="flex flex-col sm:items-center items-start justify-center w-full max-w-[980px]">
+          {/* text content */}
           <motion.p
-            className="text-center text-[1.5rem] leading-normal mb-[50px]"
+            className="sm:text-center text-left text-[1.5rem] leading-normal mb-[50px]"
             variants={getFadeInFromLeftVariants(0.5)}
             initial="hidden"
             animate={controls}
@@ -64,6 +65,7 @@ export default function AboutUs() {
             revolutionized through decentralized systems, smart contracts, and
             digital assets.
           </motion.p>
+          {/* more button */}
           <motion.div
             variants={getFadeInFromLeftVariants(0.7)}
             initial="hidden"
