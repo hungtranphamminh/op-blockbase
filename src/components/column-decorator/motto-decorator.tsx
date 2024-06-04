@@ -3,7 +3,7 @@ import {
   getMottoColumnVariants,
   getMottoRadiantVariants,
 } from "@/utils/animation/landing-page/motto-variants";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const MottoDecorator = () => {
@@ -46,7 +46,7 @@ const MottoDecorator = () => {
         {/* 1st column */}
         {hasCheck && (
           <div className="sm:w-1/6 w-1/3 h-full relative">
-            {!isLoaded && hasCheck ? (
+            {!isLoaded ? (
               <motion.div
                 className="w-[1px] h-full border-l border-white absolute top-0 left-0"
                 initial="initial"
@@ -56,7 +56,7 @@ const MottoDecorator = () => {
             ) : (
               <div className="w-[1px] h-full border-l border-[rgba(177,177,177,0.4)] absolute top-0 left-0"></div>
             )}
-            {!isLoaded && hasCheck ? (
+            {!isLoaded ? (
               <motion.div
                 className="w-[1px] h-full border-r border-white absolute top-0 right-0"
                 initial="initial"
@@ -75,11 +75,11 @@ const MottoDecorator = () => {
             ></motion.div>
           </div>
         )}
-        {/* 2nd column */}
+        {/* 2nd->4th column */}
         {!isMobile && hasCheck && (
           <>
             <div className="w-1/6 h-full relative">
-              {!isLoaded && hasCheck ? (
+              {!isLoaded ? (
                 <motion.div
                   className="w-[1px] h-full border-r border-white absolute top-0 right-0"
                   initial="initial"
@@ -104,7 +104,7 @@ const MottoDecorator = () => {
             </div>
             {/* 3rd column */}
             <div className="w-1/6 h-full relative ">
-              {!isLoaded && hasCheck ? (
+              {!isLoaded ? (
                 <motion.div
                   className="w-[1px] h-full border-r border-white absolute top-0 right-0"
                   initial="initial"
@@ -117,7 +117,7 @@ const MottoDecorator = () => {
             </div>
             {/* 4th column */}
             <div className="w-1/6 h-full relative">
-              {!isLoaded && hasCheck ? (
+              {!isLoaded ? (
                 <motion.div
                   className="w-[1px] h-full border-r border-white absolute top-0 right-0"
                   initial="initial"
@@ -133,7 +133,7 @@ const MottoDecorator = () => {
         {/* 5th column */}
         {hasCheck && (
           <div className="sm:w-1/6 w-1/3 h-full relative ">
-            {!isLoaded && hasCheck ? (
+            {!isLoaded ? (
               <motion.div
                 className="w-[1px] h-full border-r border-white absolute top-0 right-0"
                 initial="initial"
@@ -169,7 +169,7 @@ const MottoDecorator = () => {
         {/* 6th column */}
         {hasCheck && (
           <div className="sm:w-1/6 w-1/3 h-full relative">
-            {!isLoaded && hasCheck ? (
+            {!isLoaded ? (
               <motion.div
                 className="w-[1px] h-full border-r border-white absolute top-0 right-0"
                 initial="initial"
