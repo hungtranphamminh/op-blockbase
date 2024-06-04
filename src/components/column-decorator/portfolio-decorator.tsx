@@ -57,7 +57,7 @@ const PortfolioDecorator = ({ triggered }: { triggered: boolean }) => {
                   className="w-[1px] h-full border-l border-white absolute top-0 left-0"
                   initial="initial"
                   animate="animate"
-                  variants={getMottoColumnVariants(0.4)}
+                  variants={getMottoColumnVariants(delays[0])}
                 ></motion.div>
               ) : (
                 <div className="w-[1px] h-full border-l border-[rgba(177,177,177,0.4)] absolute top-0 left-0"></div>
@@ -67,7 +67,7 @@ const PortfolioDecorator = ({ triggered }: { triggered: boolean }) => {
                   className="w-[1px] h-full border-r border-white absolute top-0 right-0"
                   initial="initial"
                   animate="animate"
-                  variants={getMottoColumnVariants(0.7)}
+                  variants={getMottoColumnVariants(delays[1])}
                 ></motion.div>
               ) : (
                 <div className="w-[1px] h-full border-r border-[rgba(177,177,177,0.4)] absolute top-0 right-0"></div>
@@ -125,7 +125,7 @@ const PortfolioDecorator = ({ triggered }: { triggered: boolean }) => {
                   className="w-[1px] h-full border-r border-white absolute top-0 right-0"
                   initial="initial"
                   animate="animate"
-                  variants={getMottoColumnVariants(1.9)}
+                  variants={getMottoColumnVariants(delays[5])}
                 ></motion.div>
               ) : (
                 <div className="w-[1px] h-full border-r border-[rgba(177,177,177,0.4)] absolute top-0 right-0"></div>
@@ -148,7 +148,7 @@ const PortfolioDecorator = ({ triggered }: { triggered: boolean }) => {
                   className="w-[1px] h-full border-r border-white absolute top-0 right-0"
                   initial="initial"
                   animate="animate"
-                  variants={getMottoColumnVariants(2.2)}
+                  variants={getMottoColumnVariants(delays[6])}
                 ></motion.div>
               ) : (
                 <div className="w-[1px] h-full border-r border-[rgba(177,177,177,0.4)] absolute top-0 right-0"></div>

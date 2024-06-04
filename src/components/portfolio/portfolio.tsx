@@ -135,7 +135,8 @@ export default function Portfolio() {
       <div
         style={{ height: flexHeight * 80 }}
         className="bg-[#f0f0f0] absolute top-0 right-0 max-h-[80px]
-      w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*4))]
+      sm:w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*4))]
+      w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*2))]
       "
       ></div>
     </div>
