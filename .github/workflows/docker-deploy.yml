@@ -11,7 +11,10 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: op-blockbase-clone
+  # Use the full repository name for registry
+  IMAGE_NAME: ${{ github.repository }}
+  # Use a simplified container name without slashes
+  CONTAINER_NAME: op-blockbase-app
 
 jobs:
   build-and-push:
@@ -67,7 +70,7 @@ jobs:
       - name: Deploy application
         run: |
           docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-          docker stop ${{ env.IMAGE_NAME }} || true
-          docker rm ${{ env.IMAGE_NAME }} || true
-          docker run -d -p 3000:3000 --restart unless-stopped --name ${{ env.IMAGE_NAME }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          docker stop ${{ env.CONTAINER_NAME }} || true
+          docker rm ${{ env.CONTAINER_NAME }} || true
+          docker run -d -p 3000:3000 --restart unless-stopped --name ${{ env.CONTAINER_NAME }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           docker image prune -a -f
