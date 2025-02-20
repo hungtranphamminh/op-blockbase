@@ -4,7 +4,10 @@ import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import InsightsDecorator from "../column-decorator/insights-decorator";
-import { getFadeInFromLeftVariants } from "@/utils/animation/landing-page/about-us-variants";
+import {
+  getFadeInFromLeftVariants,
+  getFadeInFromLeftWidthVariants,
+} from "@/utils/animation/landing-page/about-us-variants";
 import blackarrow from "@/images/about-us/arrow.svg";
 
 import wc from "@/images/insights/wc.png";
@@ -77,14 +80,14 @@ export default function Insights() {
 
   return (
     <div
-      className="w-full relative flex items-center justify-center bg-[#ddd] h-screen"
+      className="w-full relative flex items-center justify-center bg-[#ddd] sm:h-screen min-h-screen"
       ref={portfolioRef}
     >
       {/* column grid background decorator */}
       <InsightsDecorator triggered={triggered} />
       {/* main portfolio content */}
-      <div className="w-full h-screen absolute text-black">
-        <div className="w-full h-full">
+      <div className="w-full sm:h-screen min-h-screen sm:absolute relative text-black">
+        <div className="w-full h-full pt-[90px] sm:pt-0">
           {/* section title */}
           <motion.div
             className="flex absolute  xl:gap-[30px] top-[42px] gap-[15px]
@@ -99,26 +102,36 @@ export default function Insights() {
             </h2>
           </motion.div>
           {/* posts */}
-          <div className="max-w-[min(1600px,calc(0.8*100vw))] relative z-[9999] h-screen w-full m-auto flex flex-col justify-center items-center">
+          <div className="max-w-[min(1600px,calc(0.8*100vw))] relative z-[9999] sm:h-screen w-full m-auto flex flex-col justify-center items-center">
             {/* link */}
-            <div className="w-full flex justify-end">
+            <motion.div
+              variants={getFadeInFromLeftWidthVariants(1.0, "-1%")}
+              initial="hidden"
+              animate={controls}
+              className="w-full flex sm:justify-end justify-start"
+            >
               <div className="mb-[50px] flex items-center justify-center sm:gap-[20px] gap-[10px] sm:text-[1.375rem] opacity-1 hover:opacity-40 transition-all duration-500">
                 VIEW ALL
                 <div>
                   <Image src={blackarrow} alt="arrow" />
                 </div>
               </div>
-            </div>
+            </motion.div>
             {/* main posts */}
-            <div className="w-full flex flex-wrap items-start">
+            <motion.div
+              variants={getFadeInFromLeftVariants(0)}
+              initial="hidden"
+              animate={controls}
+              className="w-full flex sm:flex-row flex-col flex-wrap items-start"
+            >
               {MOCKUP_POSTS.map((post, index) => {
                 return (
-                  <div key={index} className="w-1/3">
+                  <div key={index} className="sm:w-1/3 w-full">
                     <PostCard post={post} />
                   </div>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -126,7 +139,8 @@ export default function Insights() {
       <div
         style={{ height: flexHeight * 80 }}
         className="bg-[#f0f0f0] absolute top-0 right-0 max-h-[80px]
-      w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*4))]
+      sm:w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*4))]
+      w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*2))]
       "
       ></div>
     </div>

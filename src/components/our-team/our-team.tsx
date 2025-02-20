@@ -1,12 +1,12 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import BackgroundDecorator from "../column-decorator/decorator";
 import Image from "next/image";
 import arrow from "@/images/about-us/arrow.svg";
 import Link from "next/link";
 import { getFadeInFromLeftVariants } from "@/utils/animation/landing-page/about-us-variants";
 import { getSlideInFromLeftVariants } from "@/utils/animation/landing-page/our-team-variants";
+import OurTeamDecorator from "../column-decorator/team-decorator";
 
 export default function OurTeam() {
   const [hover, setHover] = useState(false);
@@ -39,7 +39,7 @@ export default function OurTeam() {
   return (
     <div className="w-full relative flex items-center justify-center bg-[#f0f0f0] h-screen">
       {/* background column grid */}
-      <BackgroundDecorator />
+      <OurTeamDecorator />
 
       {/* section title */}
       <motion.div
@@ -63,9 +63,10 @@ export default function OurTeam() {
       </motion.div>
       {/* main content */}
       <div className="relative w-full max-w-[min(1600px,calc(0.8*100vw))] m-auto flex items-center justify-center z-30">
-        <div className="flex flex-col items-center justify-center w-full max-w-[760px]">
+        <div className="flex flex-col sm:items-center items-start justify-center w-full max-w-[760px]">
+          {/* main  text content */}
           <motion.h2
-            className=" text-center sm:text-[3.75rem] -tracking-[1.5px] text-[1.875rem] leading-normal mb-[40px]"
+            className=" sm:text-center text-left sm:text-[3.75rem] -tracking-[1.5px] text-[1.875rem] leading-normal mb-[40px]"
             variants={getFadeInFromLeftVariants(0.5)}
             initial="hidden"
             animate={controls}
@@ -74,7 +75,7 @@ export default function OurTeam() {
           </motion.h2>
 
           <motion.p
-            className="text-center sm:text-[2.375rem] sm:mb-[80px] -tracking-[1.52px] text-[1.5rem] leading-normal mb-[50px]"
+            className="sm:text-center text-left sm:text-[2.375rem] sm:mb-[80px] -tracking-[1.52px] text-[1.5rem] leading-normal mb-[50px]"
             variants={getFadeInFromLeftVariants(1.0)}
             initial="hidden"
             animate={controls}
@@ -82,6 +83,7 @@ export default function OurTeam() {
             A dedicated team of experienced blockchain technologists and
             financial experts.
           </motion.p>
+          {/* link button */}
           <motion.div
             variants={getFadeInFromLeftVariants(1.5)}
             initial="hidden"

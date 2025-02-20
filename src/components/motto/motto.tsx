@@ -45,7 +45,9 @@ export default function Motto() {
         className={`px-[30px] pt-20 pb-5 flex items-center justify-center absolute left-0 top-0 w-full h-screen z-30`}
       >
         <div
-          className="xl:max-w-[1000px] lg:max-w-[800px] max-w-[700px] w-full text-[rgb(221,221,221)]"
+          className="xl:max-w-[1000px] lg:max-w-[800px] max-w-[700px] w-full text-[rgb(221,221,221)] sm:px-0
+          px-[calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)]
+          "
           ref={textRef}
           style={{ opacity: flexOpacity }}
         >
@@ -66,7 +68,7 @@ export default function Motto() {
             variants={getMottoFadeWidthVariants(4.5)}
             className="2xl:text-[9.375rem] 2xl:ml-[230px] xl:text-9xl xl:ml-[200px]
           lg:text-8xl lg:ml-[150px] sm:text-[5rem] sm:ml-[80px]
-          text-[4rem] font-semibold leading-[1.5] mb-2.5 text-left -tracking-[1.5px]"
+          text-[4rem] font-semibold sm:leading-[1.5] leading-none mb-2.5 sm:text-left text-right -tracking-[1.5px]"
           >
             One Block
           </motion.h1>
@@ -75,7 +77,7 @@ export default function Motto() {
               initial="initial"
               animate="animate"
               variants={getMottoFadeWidthVariants(5.0)}
-              className="xl:text-[8rem]  2xl:text-[9.375rem] lg:text-[6rem] sm:text-[5rem]
+              className="xl:text-[8rem]  2xl:text-[9.375rem] lg:text-[6rem] sm:text-[5rem] text-[4rem]
                font-semibold -tracking-[1.5px] leading-none text-left"
             >
               Ahead
@@ -85,7 +87,7 @@ export default function Motto() {
               animate="animate"
               variants={getMottoFadeWidthVariants(5.5)}
               className="2xl:text-[2rem] xl:text-[2.25rem] xl:ml-0
-          lg:text-[2.375rem] lg:ml-[50px] sm:text-[2rem]  sm:w-full leading-[1.8]
+          lg:text-[2.375rem] lg:ml-[50px] sm:text-[2rem]  sm:w-full leading-[1.8] text-[0.9rem] 
           "
             >
               Paving the way for seamless integration between crypto and
@@ -98,7 +100,9 @@ export default function Motto() {
       <div
         style={{ height: flexHeight * 80 }}
         className="bg-[#f0f0f0] absolute bottom-0 right-0 max-h-[80px]
-      w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*2))]
+      sm:w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/6*2))]
+      w-[calc(calc(calc(100%-min(1600px,calc(0.8*100vw)))/2)+calc(min(1600px,calc(0.8*100vw))/3*2))]
+
       "
       ></div>
     </div>
