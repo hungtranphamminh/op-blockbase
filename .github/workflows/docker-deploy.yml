@@ -1,9 +1,6 @@
 name: Next.js Docker Deploy
 run-name: Deploy to production by @${{ github.actor }}
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
